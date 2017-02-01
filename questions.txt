@@ -1,0 +1,18 @@
+https://egghead.io/lessons/react-create-a-pipe-function-to-enable-function-composition
+Why is this considered better?
+
+handleToggle = id => {
+  const getUpdatedTodos = pipe(findById, toggleTodo, partial(updateTodo, this.state.todos));
+  const updatedTodos = getUpdatedTodos(id, this.state.todos);
+  // const todo = findById(id, this.state.todos);
+  // const toggled = toggleTodo(todo);
+  // const updatedTodos = updateTodo(this.state.todos, toggled);
+  this.setState({todos: updatedTodos});
+}
+
+https://egghead.io/lessons/react-pass-data-to-event-handlers-with-partial-function-application?series=build-your-first-production-quality-react-app#/guidelinesModal
+What's wrong with the first way?
+// All 3 of the following handleToggle functions do the same thing
+// const handleToggle = () => props.handleToggle(props.id)
+// const handleToggle = props.handleToggle.bind(null, props.id);
+const handleToggle = partial(props.handleToggle, props.id);

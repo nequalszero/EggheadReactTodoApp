@@ -1,0 +1,4 @@
+Run development build at http://localhost:3000/ by typing 'npm start'
+Run tests by typing 'npm test'
+Installed json-server by typing 'sudo npm i -g json-server'
+Ran json-server at port 8080 by typing 'json-server -p 8080 --watch db.json'
